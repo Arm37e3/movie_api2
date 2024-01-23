@@ -1,0 +1,54 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+*{
+    font-family: 'Bungee Spice', sans-serif;
+    margin: 0;
+    padding: 0%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: start;
+    background-color: aqua;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+h2{
+    font-size: 30px;
+}
+.rate_text{
+    width: 20px;   
+}
+img{
+    padding: 10px;
+    object-fit: cover;  
+    border-radius: 5px;
+}
+h4{
+    border-radius: 30px;
+    width: 60px;
+    height: 40px;
+    position:absolute;
+    top: 110px;
+    text-align: center;
+    padding: 6px; 
+    width: 10px;
+    font-size: 20px;
+}
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}

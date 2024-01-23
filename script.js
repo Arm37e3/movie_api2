@@ -96,4 +96,4 @@ const Showpage = () =>{
 
 
 displayMovie(url);
-Showpage();
+Showpage(page);
