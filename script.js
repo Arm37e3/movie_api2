@@ -35,29 +35,40 @@ const displayMovie = async (url) =>{
     const urlPoster =  `https://image.tmdb.org/t/p/w500/`;
 
     movie.results.forEach(M => {
+
+        //สร้างตัวเเปรชื่อ linkto ให้ค้นหาในYoutubeเเล้วเติมคำว่า fullmoviesหลังชื่อเรื่อง
         const linkto = document.createElement("a")
         linkto.href = `https://www.youtube.com/results?search_query=${M.title}fullmovie`
         const mvEL = document.createElement("div")
+        mvEL.classList.add("card")//กรอบหนัง
+
         const circle = document.createElement("div")
         circle.classList.add("reteContenter") 
-        const title = document.createElement("h2")
+
+        const title = document.createElement("h2")//ชื่อหนัง
         const rate = document.createElement("h4")
-        rate.classList.add("rete_text")
-        const poster = document.createElement("img")
+        rate.classList.add("rete_text")//สร้าง class name"rete_text" ของrate
+        const poster = document.createElement("img") //รูปภาพหนัง
+
+        var img_star = document.createElement("img")
+        img_star.src = "./star.png"
+        img_star.classList.add("rete_star") 
 
         title.innerHTML = `${M.title.substring(0, 25)}`;
         poster.src = `${urlPoster}${M.poster_path}`;
         rate.innerHTML = `${M.vote_average}`;
 
 
+        circle.appendChild(img_star);
         circle.appendChild(rate);
         mvEL.appendChild(circle);
-        mvEL.appendChild(title);
         mvEL.appendChild(poster);
+        mvEL.appendChild(title);
         linkto.appendChild(mvEL);
         content.appendChild(linkto);
     })
 
+    //อัพเดตทุกครั้งที่เปลี่ยนปี 
     dropdown.addEventListener('change',()=>{
         console.log(dropdown.value);
         let update_year = dropdown.value
